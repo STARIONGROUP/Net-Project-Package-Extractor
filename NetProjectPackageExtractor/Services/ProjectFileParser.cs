@@ -18,8 +18,10 @@
 // </copyright>
 // ------------------------------------------------------------------------------------------------
 
+
 namespace NetProjectPackageExtractor.Services
 {
+    using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Xml;
@@ -38,13 +40,13 @@ namespace NetProjectPackageExtractor.Services
         /// <returns>
         /// An <see cref="IEnumerable{Package}"/>
         /// </returns>
-        public IEnumerable<Package> Parse(IEnumerable<FileInfo> projectFiles)
+        public IEnumerable<Package> Parse(IEnumerable<FileInfo> projectFiles, DirectoryInfo rootDirectory)
         {
             var result = new List<Package>();
-
+            
             foreach (var projectFile in projectFiles)
             {
-                var packages = ParseProjectFile(projectFile);
+                var packages = ParseProjectFile(projectFile, rootDirectory);
                 result.AddRange(packages);
             }
 
@@ -60,10 +62,10 @@ namespace NetProjectPackageExtractor.Services
         /// <returns>
         /// An <see cref="IEnumerable{Package}"/>
         /// </returns>
-        private static IEnumerable<Package> ParseProjectFile(FileInfo projectFile)
+        private static IEnumerable<Package> ParseProjectFile(FileInfo projectFile, DirectoryInfo rootDirectory)
         {
             var document = new XmlDocument();
-            
+
             var reader = projectFile.OpenRead();
             document.Load(reader);
 
@@ -92,16 +94,22 @@ namespace NetProjectPackageExtractor.Services
             
             var packageReferenceElements = document.GetElementsByTagName("PackageReference");
 
+            var dictionary = DirectoryPackageParser.SearchAndParse(projectFile, rootDirectory);
+
             foreach (var element in packageReferenceElements)
             {
                 var xmlElement = (XmlNode)element;
-                
-				var package = new Package
+                var name = xmlElement.Attributes["Include"]?.Value;
+
+                var package = new Package
                 {
                     ProjectTitle = projectTitle,
                     ProjectVersion = projectVersion,
-                    Name = xmlElement.Attributes["Include"]?.Value,
-                    Version = xmlElement.Attributes["Version"]?.Value,
+                    Name = name,
+                    Version = (xmlElement.Attributes["Version"]?.Value ??
+                               xmlElement.Attributes["VersionOverride"]?.Value ??
+                               dictionary[name] ?? 
+                               String.Empty),
                 };
 
                 yield return package;

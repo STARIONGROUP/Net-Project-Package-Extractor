@@ -38,6 +38,6 @@ namespace NetProjectPackageExtractor.Services
         /// <returns>
         /// An <see cref="IEnumerable{Package}"/>
         /// </returns>
-        IEnumerable<Package> Parse(IEnumerable<FileInfo> projectFiles);
+        IEnumerable<Package> Parse(IEnumerable<FileInfo> projectFiles, DirectoryInfo rootDirectory);
     }
 }
