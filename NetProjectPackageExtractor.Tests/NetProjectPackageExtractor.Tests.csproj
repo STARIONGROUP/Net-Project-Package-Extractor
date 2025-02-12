@@ -10,12 +10,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
     <PackageReference Include="Moq" Version="4.20.72" />
-    <PackageReference Include="NUnit" Version="4.2.2" />
+    <PackageReference Include="NUnit" Version="4.3.2" />
 	<PackageReference Include="NUnit.Console" Version="3.18.2" />
     <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
-    <PackageReference Include="coverlet.collector" Version="6.0.2">
+    <PackageReference Include="coverlet.collector" Version="3.1.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -28,12 +28,26 @@
   <ItemGroup>
     <Folder Include="Commands\" />
     <Folder Include="Root\SubFolder1\Subfolder1.1\" />
+    <Folder Include="Root\SubFolder1\Subfolder1.2\SubsubFolder1.2.1\SubSubSubFolder1.2.1.1\" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Root\root.csproj">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Root\SubFolder1\Subfolder1.2\SubFolder1.2.csproj">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Root\SubFolder1\Subfolder1.2\SubsubFolder1.2.1\SubSubSubFolder1.2.1.1\SubSubSubFolder1.2.1.1.csproj">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+	  <None Include="Root\SubFolder1\Subfolder1.2\Directory.Packages.props">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+    <None Include="root\subfolder1\subfolder1.2\subsubfolder1.2.1\SubSubFolder1.2.1.csproj">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+
 	<None Include="Root\SubFolder1\SubFolder1.csproj">
 	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	</None>

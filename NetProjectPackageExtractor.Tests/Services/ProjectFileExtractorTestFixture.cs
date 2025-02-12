@@ -50,7 +50,7 @@ namespace NetProjectPackageExtractor.Tests.Services
         {
             var files = this.projectFileExtractor.QueryProjectFiles(rootFolder);
 
-            Assert.That(files.Count(), Is.EqualTo(3));
+            Assert.That(files.Count(), Is.EqualTo(6));
         }
     }
 }

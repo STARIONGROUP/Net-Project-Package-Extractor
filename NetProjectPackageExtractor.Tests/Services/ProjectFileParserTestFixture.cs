@@ -38,12 +38,16 @@ namespace NetProjectPackageExtractor.Tests.Services
 
         private List<FileInfo> projectFiles;
 
+        private DirectoryInfo rootFolder;
+
         [SetUp]
         public void Setup()
         {
-            var projectFile = Path.Combine(TestContext.CurrentContext.TestDirectory, "Root", "root.csproj");
+            var projectFile = Path.Combine(TestContext.CurrentContext.TestDirectory, "Root", "root.csproj"); 
+            
+            this.rootFolder = new DirectoryInfo(Path.GetDirectoryName(projectFile));
 
-            this.projectFiles = new List<FileInfo>() { new FileInfo(projectFile) };
+            this.projectFiles = [new FileInfo(projectFile)];
 
             this.projectFileParser = new ProjectFileParser();
         }
@@ -51,7 +55,7 @@ namespace NetProjectPackageExtractor.Tests.Services
         [Test]
         public void Verify_that_Parser_returns_packages()
         {
-            var package = this.projectFileParser.Parse(projectFiles).Single();
+            var package = this.projectFileParser.Parse(projectFiles, rootFolder).Single();
 
             Assert.That(package.ProjectTitle, Is.EqualTo("Root project"));
             Assert.That(package.ProjectVersion, Is.EqualTo("0.0.1"));

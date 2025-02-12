@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFrameworks>netstandard2.0</TargetFrameworks>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<Title>SubFolder1.2 Project</Title>
+		<PackageId>SubFolder1.2-Project</PackageId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="NUnit3TestAdapter" VersionOverride="4.5.0"/>
+	</ItemGroup>
+
+</Project>

@@ -20,6 +20,7 @@
 
 namespace NetProjectPackageExtractor.Services
 {
+    using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -36,6 +37,10 @@ namespace NetProjectPackageExtractor.Services
         public static Dictionary<string, string> SearchAndParse(FileInfo projectFile, DirectoryInfo sourceDirectory)
         {
             var subDirectory = projectFile.Directory;
+            if (sourceDirectory.FullName.Contains(projectFile.DirectoryName) && sourceDirectory.FullName != projectFile.DirectoryName)
+            {
+                throw new ArgumentException("The source directory must be a parent of the project file");
+            }
 
             FileInfo directoryPackagesFile = null;
             while (subDirectory.FullName.Contains(sourceDirectory.FullName))
