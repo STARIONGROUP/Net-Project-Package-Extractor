@@ -30,7 +30,6 @@ namespace NetProjectPackageExtractor.Tests.Services
 
     using NUnit.Framework;
 
-
     /// <summary>
     /// Suite of tests for the <see cref="DirectoryPackageParser"/> class.
     /// </summary>
@@ -43,7 +42,6 @@ namespace NetProjectPackageExtractor.Tests.Services
         private List<Package> packages;
 
         private DirectoryInfo rootFolder;
-
 
         [SetUp]
         public void SetUp()
@@ -107,7 +105,6 @@ namespace NetProjectPackageExtractor.Tests.Services
         public void Verify_that_Parser_returns_exception()
         {
             var targetProjectFile = new FileInfo(Path.Combine(this.rootFolder.FullName, "root.csproj"));
-
             var targetFolderFile = new DirectoryInfo(Path.Combine(this.rootFolder.FullName, "SubFolder1"));
 
             Assert.Throws<ArgumentException>(() => DirectoryPackageParser.SearchAndParse(targetProjectFile, targetFolderFile));
