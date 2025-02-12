@@ -30,7 +30,7 @@ namespace NetProjectPackageExtractor.Services
         /// <summary>
         /// Search for the closest Directory.Packages.props file in the directory structure from the csproj file.
         /// </summary>
-        /// <param name="directoryFile">The location of the csproj file</param>
+        /// <param name="projectFile">The location of the csproj file</param>
         /// <param name="sourceDirectory">The source directory provided by the user in the command line</param>
         /// <returns>A dictionary where the key is the package name, and the value the version number</returns>
         public static Dictionary<string, string> SearchAndParse(FileInfo projectFile, DirectoryInfo sourceDirectory)

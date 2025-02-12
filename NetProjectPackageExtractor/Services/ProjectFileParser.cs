@@ -55,10 +55,13 @@ namespace NetProjectPackageExtractor.Services
 
         /// <summary>
         /// Parses the provided Project file
+        /// Eventually searches for a Directory.Build.props file and parses it (if it exists) for Central Package Management (CPM)
+        /// See also https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management for more information
         /// </summary>
         /// <param name="projectFile">
         /// The subject project file (encapsulated by a <see cref="FileInfo"/> object).
         /// </param>
+        /// <param name="rootDirectory">The root directory of the solution (which should contain the Directory.Build.props file if using CPM)</param>
         /// <returns>
         /// An <see cref="IEnumerable{Package}"/>
         /// </returns>
