@@ -5,8 +5,8 @@
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
 	<Company>Starion Group S.A.</Company>
-	<Authors>Sam Gerené, Alexander van Delft</Authors>
-	<Copyright>Copyright 2022-2024 Starion Group S.A.</Copyright>
+	<Authors>Sam Gerené, Alexander van Delft, Anh Toan Bui Long</Authors>
+	<Copyright>Copyright 2022-2025 Starion Group S.A.</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
