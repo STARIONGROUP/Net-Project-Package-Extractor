@@ -92,7 +92,7 @@ namespace NetProjectPackageExtractor.Tests.Commands
             this.projectFileExtractor.Verify(x => x.QueryProjectFiles(It.IsAny<DirectoryInfo>()),
                 Times.Once);
 
-            this.projectFileParser.Verify(x => x.Parse(It.IsAny<IEnumerable<FileInfo>>()
+            this.projectFileParser.Verify(x => x.Parse(It.IsAny<IEnumerable<FileInfo>>(), It.IsAny<DirectoryInfo>()
                 ), Times.Once);
 
             Assert.That(result, Is.EqualTo(0));

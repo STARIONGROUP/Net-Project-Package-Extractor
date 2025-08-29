@@ -1,7 +1,7 @@
 ﻿// -------------------------------------------------------------------------------------------------
 // <copyright file="ProjectFileParser.cs" company="Starion Group S.A.">
 //
-//   Copyright 2022-2024 Starion Group S.A.
+//   Copyright 2022-2025 Starion Group S.A.
 //
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -18,8 +18,10 @@
 // </copyright>
 // ------------------------------------------------------------------------------------------------
 
+
 namespace NetProjectPackageExtractor.Services
 {
+    using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Xml;
@@ -38,13 +40,13 @@ namespace NetProjectPackageExtractor.Services
         /// <returns>
         /// An <see cref="IEnumerable{Package}"/>
         /// </returns>
-        public IEnumerable<Package> Parse(IEnumerable<FileInfo> projectFiles)
+        public IEnumerable<Package> Parse(IEnumerable<FileInfo> projectFiles, DirectoryInfo rootDirectory)
         {
             var result = new List<Package>();
-
+            
             foreach (var projectFile in projectFiles)
             {
-                var packages = ParseProjectFile(projectFile);
+                var packages = ParseProjectFile(projectFile, rootDirectory);
                 result.AddRange(packages);
             }
 
@@ -53,17 +55,20 @@ namespace NetProjectPackageExtractor.Services
 
         /// <summary>
         /// Parses the provided Project file
+        /// Eventually searches for a Directory.Build.props file and parses it (if it exists) for Central Package Management (CPM)
+        /// See also https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management for more information
         /// </summary>
         /// <param name="projectFile">
         /// The subject project file (encapsulated by a <see cref="FileInfo"/> object).
         /// </param>
+        /// <param name="rootDirectory">The root directory of the solution (which should contain the Directory.Build.props file if using CPM)</param>
         /// <returns>
         /// An <see cref="IEnumerable{Package}"/>
         /// </returns>
-        private static IEnumerable<Package> ParseProjectFile(FileInfo projectFile)
+        private static IEnumerable<Package> ParseProjectFile(FileInfo projectFile, DirectoryInfo rootDirectory)
         {
             var document = new XmlDocument();
-            
+
             var reader = projectFile.OpenRead();
             document.Load(reader);
 
@@ -92,16 +97,22 @@ namespace NetProjectPackageExtractor.Services
             
             var packageReferenceElements = document.GetElementsByTagName("PackageReference");
 
+            var dictionary = DirectoryPackageParser.SearchAndParse(projectFile, rootDirectory);
+
             foreach (var element in packageReferenceElements)
             {
                 var xmlElement = (XmlNode)element;
-                
-				var package = new Package
+                var name = xmlElement.Attributes["Include"]?.Value;
+
+                var package = new Package
                 {
                     ProjectTitle = projectTitle,
                     ProjectVersion = projectVersion,
-                    Name = xmlElement.Attributes["Include"]?.Value,
-                    Version = xmlElement.Attributes["Version"]?.Value,
+                    Name = name,
+                    Version = (xmlElement.Attributes["Version"]?.Value ??
+                               xmlElement.Attributes["VersionOverride"]?.Value ??
+                               dictionary[name] ?? 
+                               String.Empty),
                 };
 
                 yield return package;

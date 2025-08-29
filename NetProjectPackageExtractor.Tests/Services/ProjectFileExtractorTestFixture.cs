@@ -1,7 +1,7 @@
 // -------------------------------------------------------------------------------------------------
 // <copyright file="ProjectFileExtractorTestFixture.cs" company="Starion Group S.A.">
 //
-//   Copyright 2022-2024 Starion Group S.A.
+//   Copyright 2022-2025 Starion Group S.A.
 //
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -50,7 +50,7 @@ namespace NetProjectPackageExtractor.Tests.Services
         {
             var files = this.projectFileExtractor.QueryProjectFiles(rootFolder);
 
-            Assert.That(files.Count(), Is.EqualTo(3));
+            Assert.That(files.Count(), Is.EqualTo(6));
         }
     }
 }

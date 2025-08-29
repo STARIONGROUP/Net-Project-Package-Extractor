@@ -14,7 +14,7 @@
     ███████╗██╔╝ ██╗   ██║   ██║  ██║██║  ██║╚██████╗   ██║   ╚██████╔╝██║  ██║
     ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝    ╚═════╝ ╚═╝  ╚═╝   
 
-         copyright 2022-2024 Starion Group S.A. https://www.stariongroup.eu
+         copyright 2022-2025 Starion Group S.A. https://www.stariongroup.eu
          email: info@stariongroup.eu
 
          NET PROJECT EXTRACTOR version: NetProjectExtractorVersion

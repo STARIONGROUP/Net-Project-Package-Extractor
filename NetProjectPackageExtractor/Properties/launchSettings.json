@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "NetProjectPackageExtractor": {
+      "commandName": "Project",
+      "commandLineArgs": "--root-directory C:\\Users\\along\\source\\repos\\PASaaS\\pasaas_framework --output-report srf-report.xlsx"
+    }
+  }
+}

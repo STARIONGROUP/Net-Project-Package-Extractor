@@ -1,7 +1,7 @@
 ﻿// -------------------------------------------------------------------------------------------------
 // <copyright file="IProjectFileParser.cs" company="Starion Group S.A.">
 //
-//   Copyright 2022-2024 Starion Group S.A.
+//   Copyright 2022-2025 Starion Group S.A.
 //
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -38,6 +38,6 @@ namespace NetProjectPackageExtractor.Services
         /// <returns>
         /// An <see cref="IEnumerable{Package}"/>
         /// </returns>
-        IEnumerable<Package> Parse(IEnumerable<FileInfo> projectFiles);
+        IEnumerable<Package> Parse(IEnumerable<FileInfo> projectFiles, DirectoryInfo rootDirectory);
     }
 }

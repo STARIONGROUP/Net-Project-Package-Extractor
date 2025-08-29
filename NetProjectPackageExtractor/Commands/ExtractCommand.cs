@@ -1,7 +1,7 @@
 ﻿// -------------------------------------------------------------------------------------------------
 // <copyright file="ExtractCommand.cs" company="Starion Group S.A.">
 // 
-//   Copyright 2022-2024 Starion Group S.A.
+//   Copyright 2022-2025 Starion Group S.A.
 // 
 //   Licensed under the Apache License, Version 2.0 (the "License");
 //   you may not use this file except in compliance with the License.
@@ -89,10 +89,10 @@ namespace NetProjectPackageExtractor.Commands
 
             /// <summary>
             /// The (injected) <see cref="IProjectFileExtractor"/> used to recursively iterate through a directory
-            /// tree and return all the .csproj files in this directory tree as an List of <see cref="FileInfo"/> objects
+            /// tree and return all the .csproj files in this directory tree as a List of <see cref="FileInfo"/> objects
             /// </summary>
             private readonly IProjectFileExtractor projectFileExtractor;
-
+            
             /// <summary>
             /// The (injected) <see cref="IProjectFileParser"/> used to parses a project file and extract the
             /// referenced nuget packages
@@ -194,8 +194,8 @@ namespace NetProjectPackageExtractor.Commands
                             Thread.Sleep(1500);
 
                             var csprojFiles = this.projectFileExtractor.QueryProjectFiles(this.RootDirectory);
-                            
-                            var packages = projectFileParser.Parse(csprojFiles).ToList();
+
+                            var packages = projectFileParser.Parse(csprojFiles, this.RootDirectory).ToList();
 
                             AnsiConsole.MarkupLine($"[grey]LOG:[/] A total of [bold]{packages.Count}[/] packages were read");
                             ctx.Status("Updating Package information at Warp 7...");
