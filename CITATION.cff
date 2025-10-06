@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+
+title: "NET Project Package Extractor"
+abstract: "A command line application that extracts all nuget information from csproj files in a nested directory structure and saves the result to a spreadsheet."
+version: "5.0.0"
+date-released: "2025-10-06"
+url: "https://github.com/STARIONGROUP/Net-Project-Package-Extractor"
+
+authors:
+  - given-names: "Sam"
+    family-names: "Gerené"
+    affiliation: "Starion Group S.A."
+    orcid: "https://orcid.org/0009-0000-1848-550X"
+  - given-names: Alexander
+    family-names: Van Delft
+    affiliation: "Starion Group S.A."
+  - name: "Starion Group S.A."
+
+repository-code: "https://github.com/STARIONGROUP/Net-Project-Package-Extractor"
+license: "Apache-2.0"
+
+preferred-citation:
+  type: software
+  title: "NET Project Package Extractor"
+  authors:
+    - given-names: "Sam"
+      family-names: "Gerené"
+      orcid: "https://orcid.org/0009-0000-1848-550X"
+    - given-names: Alexander
+      family-names: Van Delft
+      affiliation: "Starion Group S.A."
+    - name: "Starion Group S.A."
+  version: "5.2.3"
+  url: "https://github.com/STARIONGROUP/Net-Project-Package-Extractor"
+  date-released: "2025-10-06"
