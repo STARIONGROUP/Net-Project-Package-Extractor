@@ -13,6 +13,7 @@
 		<ImplicitUsings>disable</ImplicitUsings>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageIcon>starion-s-symbol-main1-rgb.png</PackageIcon>
+        <GenerateSBOM>true</GenerateSBOM>
         <PackageReleaseNotes>
             [Update] Dependencies
         </PackageReleaseNotes>
@@ -47,6 +48,7 @@
 		<PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
 		<PackageReference Include="System.CommandLine.Hosting" Version="0.4.0-alpha.22272.1" />
 		<PackageReference Include="Spectre.Console" Version="0.51.1" />
+        <PackageReference Include="Microsoft.Sbom.Targets" Version="4.1.1" PrivateAssets="all" />
 	</ItemGroup>
 
 	<ItemGroup>
