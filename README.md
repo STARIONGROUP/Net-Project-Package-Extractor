@@ -1,15 +1,15 @@
 # Net-Project-Package-Extractor
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=STARIONGROUP_Net-Project-Package-Extractor&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=STARIONGROUP_Net-Project-Package-Extractor&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=STARIONGROUP_Net-Project-Package-Extractor&metric=coverage)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=STARIONGROUP_Net-Project-Package-Extractor&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=STARIONGROUP_Net-Project-Package-Extractor&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=STARIONGROUP_Net-Project-Package-Extractor&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=STARIONGROUP_Net-Project-Package-Extractor&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=STARIONGROUP_Net-Project-Package-Extractor&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=STARIONGROUP_Net-Project-Package-Extractor&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=STARIONGROUP_Net-Project-Package-Extractor&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=nppe&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=nppe&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=nppe&metric=coverage)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=nppe&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=nppe&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=nppe&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=nppe&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=nppe&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=nppe&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=nppe&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=STARIONGROUP_Net-Project-Package-Extractor)
 
 The purpose of the Net-Project-Package-Extractor is process all the .csproj files in a directory (and subdirectories) and extract nuget information that is saved to a spreadsheet. This can be used as an appendix to the ECSS Software Reuse File. The Net-Project-Package-Extractor is available on [Nuget](https://www.nuget.org/packages/nppe) as a dotnet tool called `nppe`.
 
